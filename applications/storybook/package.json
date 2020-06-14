@@ -1,0 +1,22 @@
+{
+  "name": "@ravenous/storybook",
+  "private": false,
+  "scripts": {
+    "start": "start-storybook -c ./"
+  },
+  "dependencies": {
+    "@storybook/cli": "^5.3.19",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "storybook": "^5.3.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.13",
+    "babel-loader": "^8.0.6",
+    "mini-css-extract-plugin": "^0.9.0"
+  },
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT"
+}
