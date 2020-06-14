@@ -1,0 +1,35 @@
+
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["dom", "es2017"],
+    "esModuleInterop": true,
+    "outDir": "build",
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types/", "./@types/"],
+    "allowSyntheticDefaultImports": true, // no errors on commonjs default import
+    "allowJs": true,
+    "checkJs": false,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "noEmitOnError": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "pretty": true,
+    "removeComments": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true
+  },
+  "include": ["**/*", "@types/**/*.d.ts", "packages/**/*.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "mock-data", "build", "coverage"]
+}
