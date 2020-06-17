@@ -3,4 +3,4 @@ import { Header } from '.'
 
 export default { title: 'Header' }
 
-export const header = () => <Header text='Ravenous' />
+export const header = (): JSX.Element => <Header text='Ravenous' />

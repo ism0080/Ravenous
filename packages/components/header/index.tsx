@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from 'styled-components'
 import React from 'react'
 
-import { theme } from '../../common/theme/standard-theme'
+import { theme } from '@ravenous/theme/standard-theme'
 
 const H1 = styled.h1`
   padding: 0.66rem 0;
@@ -12,7 +12,7 @@ const H1 = styled.h1`
   color: ${(props) => props.theme.text.light};
   margin: 0;
 `
-export const Header = ({ text }: HeaderProps) => (
+export const Header = ({ text }: HeaderProps): JSX.Element => (
   <ThemeProvider theme={theme}>
     <H1>{text}</H1>
   </ThemeProvider>

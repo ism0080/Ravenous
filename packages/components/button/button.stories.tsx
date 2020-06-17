@@ -3,4 +3,4 @@ import { Button } from '.'
 
 export default { title: 'Button' }
 
-export const withText = () => <Button text='Hello' />
+export const withText = (): JSX.Element => <Button text='Hello' />

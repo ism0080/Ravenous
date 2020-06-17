@@ -3,4 +3,4 @@ import { Input } from '.'
 
 export default { title: 'Input Box' }
 
-export const searchBox = () => <Input placeholder='Search' />
+export const searchBox = (): JSX.Element => <Input placeholder='Search' />

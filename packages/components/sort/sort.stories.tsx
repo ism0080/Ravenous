@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import { Sort } from '.'
 
 export default { title: 'Sort Options' }
@@ -9,7 +10,7 @@ const sortByOptions: SortList<sortBy> = {
   'Most Reviewed': 'review_count',
 }
 
-export const sortOptions = () => {
+export const sortOptions = (): JSX.Element => {
   const [sortBy, setSortBy] = useState<sortBy>('best_match')
 
   const handleClick = (value: sortBy) => {

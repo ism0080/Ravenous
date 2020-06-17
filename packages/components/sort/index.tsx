@@ -12,7 +12,6 @@ const Li = styled.li.attrs({
   role: 'list',
 })`
   cursor: pointer;
-  width: 4.33rem;
   border-bottom: 1px solid #fff;
   padding: 0 2.58rem 0.33rem 2.58rem;
   line-height: 1.13;
@@ -31,10 +30,14 @@ const Li = styled.li.attrs({
     color: #f0c36c;
   }
 `
-export const Sort = ({ sortOptions, sortByValue, onClick }: SortProps) => {
+export const Sort = ({ sortOptions, sortByValue, onClick }: SortProps): JSX.Element => {
   const getSortByClass = (sortByOption: sortBy) => {
     if (sortByValue === sortByOption) return 'active'
     return ''
+  }
+
+  const handleClick = (sortValue: sortBy) => {
+    onClick(sortValue)
   }
 
   return (
@@ -43,7 +46,7 @@ export const Sort = ({ sortOptions, sortByValue, onClick }: SortProps) => {
         const sortByOptionValue = sortOptions[sortByOption]
 
         return (
-          <Li key={index} className={getSortByClass(sortByOptionValue)} onClick={() => onClick(sortByOptionValue)}>
+          <Li key={index} className={getSortByClass(sortByOptionValue)} onClick={() => handleClick(sortByOptionValue)}>
             {sortByOption}
           </Li>
         )

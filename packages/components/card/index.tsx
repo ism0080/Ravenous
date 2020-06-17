@@ -38,10 +38,9 @@ const CardReviews = styled.div`
   justify-content: space-between;
   text-align: right;
 
-    &.rating {
-      font-size: 0.88rem;
-      line-height: 1rem;
-    }
+  &.rating {
+    font-size: 0.88rem;
+    line-height: 1rem;
   }
 `
 
@@ -50,19 +49,27 @@ const H3 = styled.h3`
   font-weight: 600;
 `
 
+const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 200px;
+`
+
 interface CardProps {
-  details: GenericList
+  details?: BusinessCard
 }
 
-export const Card = ({ details }: CardProps) => (
+export const Card = ({ details }: CardProps): JSX.Element => (
   <>
     {details ? (
       <CardWrapper>
-        <div>
+        <ImageContainer>
           <a href={details.url}>
             <img src={details.imgSrc} alt={details.name} />
           </a>
-        </div>
+        </ImageContainer>
         <H2>{details.name}</H2>
         <CardInformation>
           <CardAddress>
