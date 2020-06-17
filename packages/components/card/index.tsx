@@ -53,8 +53,11 @@ const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
-  height: 200px;
+
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
 `
 
 interface CardProps {

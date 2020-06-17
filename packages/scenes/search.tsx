@@ -8,17 +8,26 @@ const InputWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2.88rem;
+
+  @media only screen and (max-width: 560px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
-const Wrapper = styled.div({
-  backgroundImage: `url(${staticImages.hero.image})`,
-  height: '25rem',
-  display: 'flex',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-})
+const Wrapper = styled.div`
+  background-image: url(${staticImages.hero.image});
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media only screen and (max-width: 560px) {
+    background-image: url(${staticImages.heroMobile.image});
+  }
+`
 
 export const SearchScene = ({ searchYelp }: SearchSceneProps): JSX.Element => {
   const [term, setTerm] = useState<string>('')

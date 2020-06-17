@@ -7,6 +7,10 @@ const Ul = styled.ul`
   margin-bottom: 2.22rem;
   color: #ffffff;
   list-style-type: none;
+
+  @media only screen and (max-width: 560px) {
+    max-width: 335px;
+  }
 `
 const Li = styled.li.attrs({
   role: 'list',

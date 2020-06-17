@@ -12,4 +12,9 @@ export const Input = styled.input`
   &:last-child {
     margin-right: 0;
   }
+
+  @media only screen and (max-width: 560px) {
+    margin-right: 0;
+    margin-bottom: 0.86rem;
+  }
 `
