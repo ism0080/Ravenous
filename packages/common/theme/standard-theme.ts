@@ -7,3 +7,5 @@ export const theme = {
     dark: '#000',
   },
 }
+
+export type standardTheme = keyof typeof theme
