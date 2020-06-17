@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HomeScene } from '@ravenous/scenes'
 
-import './global.css'
+import './global.less'
 
 const App = <HomeScene />
 

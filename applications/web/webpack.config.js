@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /**
  * Root Path
@@ -20,6 +21,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
   title: 'Ravenous',
   template: rootPath('index.html'),
   filename: 'index.html',
+  favicon: 'assets/favicon.ico',
   meta: {
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
   },
@@ -38,6 +40,19 @@ const hotModulePlugin = new webpack.HotModuleReplacementPlugin()
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
   filename: '[name].css',
   chunkFilename: '[id].css',
+})
+
+/**
+ * HTML Webpack Plugin
+ * @desc Copy static files to be used in build
+ */
+const copyWebpackPlugin = new CopyWebpackPlugin({
+  patterns: [
+    {
+      from: './assets/*',
+      to: './assets/[name].[ext]',
+    },
+  ],
 })
 
 /**
@@ -86,9 +101,13 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      {
+        test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$|\.pdf$/,
+        loader: 'file-loader?name=[name].[ext]',
+      },
     ],
   },
-  plugins: [miniCssExtractPlugin, htmlPlugin, hotModulePlugin],
+  plugins: [miniCssExtractPlugin, htmlPlugin, hotModulePlugin, copyWebpackPlugin],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css'],
   },
