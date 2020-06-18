@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /**
  * Root Path
@@ -21,7 +20,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
   title: 'Ravenous',
   template: rootPath('index.html'),
   filename: 'index.html',
-  favicon: 'assets/favicon.ico',
+  favicon: 'favicon.ico',
   meta: {
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
   },
@@ -43,22 +42,10 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
 })
 
 /**
- * HTML Webpack Plugin
- * @desc Copy static files to be used in build
- */
-const copyWebpackPlugin = new CopyWebpackPlugin({
-  patterns: [
-    {
-      from: './assets/*',
-      to: './assets/[name].[ext]',
-    },
-  ],
-})
-
-/**
  * Webpack Configuration
  */
 module.exports = {
+  mode: 'production',
   entry: ['webpack/hot/dev-server', rootPath('app.tsx')],
   target: 'web',
   output: {
@@ -107,7 +94,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [miniCssExtractPlugin, htmlPlugin, hotModulePlugin, copyWebpackPlugin],
+  plugins: [miniCssExtractPlugin, htmlPlugin, hotModulePlugin],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css'],
   },

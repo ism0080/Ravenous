@@ -2,7 +2,8 @@
   "name": "@ravenous/storybook",
   "private": false,
   "scripts": {
-    "start": "start-storybook -c ./"
+    "start": "start-storybook -c ./",
+    "build": "build-storybook -c ./ -o dist"
   },
   "dependencies": {
     "@storybook/cli": "^5.3.19",

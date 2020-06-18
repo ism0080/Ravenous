@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
-    "start": "webpack-dev-server --mode development --progress"
+    "start": "webpack-dev-server --mode development --progress",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@reach/router": "^1.3.1",
