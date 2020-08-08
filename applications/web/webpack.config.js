@@ -21,6 +21,8 @@ const htmlPlugin = new HtmlWebPackPlugin({
   template: rootPath('index.html'),
   filename: 'index.html',
   favicon: 'favicon.ico',
+  css: 'global.less',
+  manifest: 'manifest.json',
   meta: {
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
   },
